@@ -13,8 +13,21 @@ describe Category do
         category = Category.new(title: 'Game Dev')
         expect(category).to be_invalid
       end
+    end
 
-      
+    context 'valid attributes' do
+      it 'is valid with a title' do
+        category = Category.new(title: 'Junior Dev')
+        expect(category).to be_valid
+      end
     end
   end
+
+  describe 'relationships' do
+    it 'has many jobs' do
+      category = Category.new(title: 'Junior Dev')
+      expect(category).to respond_to(:jobs)
+    end
+  end
+
 end
