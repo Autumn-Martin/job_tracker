@@ -12,3 +12,12 @@
 </body>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
+
+<form class='edit-job' action='/jobs/<%= @job.id %>' method='POST'>
+
+
+  <h3>Title</h3>
+  <input type='hidden' name='_method' value='PUT' >
+  <textarea rows='1' cols='30' name='job[title]'><%= @job.title %></textarea>
+  
+</form>
