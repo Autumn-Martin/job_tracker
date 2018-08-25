@@ -23,9 +23,47 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 
   <h3>Interest:</h3>
   <select id='interest-dropdown'>
-        <option value="<%= @job.level_of_interest %>">1</option>
+        <option value="<%= @job.level_of_interest %>">1 of 5</option>
         <option value="<%= @job.level_of_interest %>">2</option>
         <option value="<%= @job.level_of_interest %>">3</option>
+        <option value="<%= @job.level_of_interest %>">4</option>
+        <option value="<%= @job.level_of_interest %>">5</option>
   </select>
 
 </form>
+
+
+<%= form_for[@company, @job] do |f| %>
+<ul>
+<% @job.errors.full_messages.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ul>
+<p>
+  <%= f.label :category %><br/>
+  <%= f.text_field :category %>
+</p>
+<p>
+  <%= f.label :title %><br/>
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :company %><br/>
+  <%= f.text_field :company %>
+</p>
+<p>
+  <%= f.label :city %><br/>
+  <%= f.text_field :city %>
+</p>
+<p>
+  <%= f.label :description %><br/>
+  <%= f.text_area :description %>
+</p>
+<p>
+  <%= f.label :level_of_interest %><br/>
+  <%= f.select :level_of_interest, [1, 2, 3, 4, 5] %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
