@@ -4,11 +4,11 @@ describe "User edits an existing job" do
   scenario "a user can edit a job" do
     company = Company.create(name: 'Turing')
     category = Category.create!(title: "Crypto Dev")
-    job = company.jobs.create!(title: 'Software Dev', level_of_interest: 30, city: "Denver", category_id: 1)
+    job = company.jobs.create!(title: 'Software Dev', level_of_interest: 30, city: "Denver", category_id: category.id)
     # job.category_id.title = "Crypto Dev"
 
     visit edit_company_job_path(company, job)
-
+    save_and_open_page
     fill_in "job[title]", with: "Chef"
     fill_in "job[level_of_interest]", with: 80
     fill_in "job[city]", with: "Austin"
