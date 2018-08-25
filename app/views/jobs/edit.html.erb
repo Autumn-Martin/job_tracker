@@ -12,7 +12,7 @@
 </body>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
-
+<!-- 
 <form class='edit-job' action='/jobs/<%= @job.id %>' method='POST'>
 
 
@@ -30,10 +30,10 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
         <option value="<%= @job.level_of_interest %>">5</option>
   </select>
 
-</form>
+</form> -->
 
 
-<%= form_for[@company, @job] do |f| %>
+<%= form_for [@company, @job] do |f| %>
 <ul>
 <% @job.errors.full_messages.each do |error| %>
   <li><%= error %></li>
