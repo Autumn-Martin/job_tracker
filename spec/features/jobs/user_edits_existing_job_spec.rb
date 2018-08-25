@@ -8,9 +8,9 @@ describe "User edits an existing job" do
     # job.category_id.title = "Crypto Dev"
 
     visit edit_company_job_path(company, job)
-    save_and_open_page
+
     fill_in "job[title]", with: "Chef"
-    fill_in "job[level_of_interest]", with: 80
+    select "job[level_of_interest]", from: 'interest-dropdown'
     fill_in "job[city]", with: "Austin"
 
     click_button "Update"
