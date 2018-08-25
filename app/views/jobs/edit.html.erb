@@ -1,0 +1,14 @@
+<h1>Edit Job</h1>
+
+<body>
+  <ul>
+    <li>Category: <%= @job.category_id.title %> Add New Category</li>
+    <li>Title: <%= @job.title %></li>
+    <li>Company: <%= @job.company %></li>
+    <li>City: <%= @job.city %></li>
+    <li>Description: <%= @job.description %></li>
+    <li>Interest: <%= @job.interest %></li>
+  </ul>
+</body>
+
+Company: <%= link_to @job.company.name, company_path(@job.company) %>
