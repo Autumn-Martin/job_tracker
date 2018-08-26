@@ -11,7 +11,7 @@ describe "User edits an existing job" do
     click_link "Edit"
 
     expect(current_path).to eq(edit_company_job_path(company, job))
-    save_and_open_page
+
     # select "Video Game Dev", from: 'job[category]'
     fill_in "job[title]", with: "Chef"
     select 2, from: 'job[level_of_interest]'
