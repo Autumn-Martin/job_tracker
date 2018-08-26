@@ -10,5 +10,9 @@ describe "User deletes existing company" do
     end
 
     expect(page).to have_content("ESPN was successfully deleted!")
+
+    visit companies_path
+    
+    expect(page).to_not have_content("ESPN")
   end
 end
