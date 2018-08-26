@@ -22,7 +22,7 @@ describe Comment do
   end
 
   describe 'relationships' do
-    it 'belongs to jobs' do
+    it 'belongs to job' do
       job = Job.create(title: "Software", city: "Denver", company_id: 1, level_of_interest: 70, description: "Wahooo")
       comment = Comment.create(content: 'here is some cool content', job_id: job.id)
 

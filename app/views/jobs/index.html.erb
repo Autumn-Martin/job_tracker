@@ -7,7 +7,6 @@
     <%= job.city %>
     <%= job.level_of_interest %>
     <%= link_to "Edit", edit_company_job_path(@company, job) %>
-    <%= link_to "Delete", job_path(@job), method: :delete, data: {confirm: "Really delete the job?"} %>
-  </li>
+    <%= link_to "Delete", jobs_path(@jobs), method: "delete" %>
   <% end %>
 </ul>
