@@ -1,37 +1,6 @@
 <h1>Edit Job</h1>
 
-<body>
-  <ul>
-    <li>Category: <%= @job.category.title %> Add New Category</li>
-    <li>Title: <%= @job.title %></li>
-    <li>Company: <%= @job.company %></li>
-    <li>City: <%= @job.city %></li>
-    <li>Description: <%= @job.description %></li>
-    <li>Interest: <%= @job.level_of_interest %></li>
-  </ul>
-</body>
-
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
-<!--
-<form class='edit-job' action='/jobs/<%= @job.id %>' method='POST'>
-
-
-  <h3>Title:</h3>
-  <input type='hidden' name='_method' value='PUT' >
-  <textarea rows='1' cols='30' name='job[title]'><%= @job.title %></textarea>
-
-
-  <h3>Interest:</h3>
-  <select id='interest-dropdown'>
-        <option value="<%= @job.level_of_interest %>">1 of 5</option>
-        <option value="<%= @job.level_of_interest %>">2</option>
-        <option value="<%= @job.level_of_interest %>">3</option>
-        <option value="<%= @job.level_of_interest %>">4</option>
-        <option value="<%= @job.level_of_interest %>">5</option>
-  </select>
-
-</form> -->
-
 
 <%= form_for [@company, @job] do |f| %>
 <ul>
