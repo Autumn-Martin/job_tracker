@@ -25,7 +25,7 @@ describe 'user deletes a job' do
       click_link "Delete"
 
       expect(current_path).to eq(jobs_path(job))
-      expect(page).to have_content("Nintendo position was successfully deleted!")
+      expect(page).to have_content("Job was successfully deleted!")
       expect(page).to_not have_content(job.title)
 
     end

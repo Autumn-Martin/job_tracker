@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.all 
+    @jobs = Job.all
   end
 
   def new
@@ -45,7 +45,7 @@ class JobsController < ApplicationController
     job = Job.find(params[:id])
     job.destroy
 
-    flash[:success] = "#{job.title} was successfully deleted!"
+    flash[:success] = "Job was successfully deleted!"
     redirect_to jobs_path(job)
   end
 
