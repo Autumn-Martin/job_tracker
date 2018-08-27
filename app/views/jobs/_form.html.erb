@@ -1,4 +1,8 @@
-<%= form_for [@company, @job] do |f| %>
+<%= form_for [@job] do |f| %>
+<p id='company_dropdown'>
+  <%= f.label :company %><br/>
+  <%= f.collection_select :company, Company.all, :id, :name%>
+</p>
   <%= f.label :title %>
   <%= f.text_field :title %>
 

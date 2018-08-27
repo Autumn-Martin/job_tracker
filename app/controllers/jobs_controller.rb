@@ -1,52 +1,54 @@
 class JobsController < ApplicationController
   def index
-    @company = Company.find(params[:company_id])
-    @jobs = @company.jobs
+    @jobs = Job.all
   end
 
   def new
-    @company = Company.find(params[:company_id])
     @job = Job.new()
   end
 
   def create
-    @company = Company.find(params[:company_id])
-    @job = @company.jobs.new(job_params)
+    @job = Job.new(job_params)
     if @job.save
-      flash[:success] = "You created #{@job.title} at #{@company.name}"
-      redirect_to company_job_path(@company, @job)
+      flash[:success] = "You created #{@job.title} at #{@job.company.name}"
+      redirect_to jobs_path(@job)
     else
       render :new
     end
   end
 
   def show
-    @company = Company.find(params[:company_id])
-    @job = @company.jobs.find(params[:id])
+    @job = Job.find(params[:id])
   end
 
   def edit
-    @company = Company.find(params[:company_id])
-    @job = @company.jobs.find(params[:id])
+    # @company = Company.find(params[:company_id])
+    # @job = @company.jobs.find(params[:id])
+    @job = Job.find(params[:id])
   end
 
   def update
-    @company = Company.find(params[:company_id])
-    @job = @company.jobs.find(params[:id])
+    @job = Job.find(params[:id])
 
 
     @job.update(job_params)
     if @job.save
       flash[:success] = "#{@job.title} updated!"
-      redirect_to company_jobs_path(@company, @job)
+      redirect_to jobs_path(@job)
     else
       render :edit
     end
   end
 
+
   def destroy
-    # implement on your own!
+    job = Job.find(params[:id])
+    job.destroy
+
+    flash[:success] = "Job was successfully deleted!"
+    redirect_to jobs_path(job)
   end
+
 
   private
 
