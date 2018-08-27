@@ -10,7 +10,7 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 </ul>
 <p id='company_dropdown'>
   <%= f.label :company %><br/>
-  <%= f.collection_select :company, Company.all, :id, :title%>
+  <%= f.collection_select :company, Company.all, :id, :name%>
 </p>
 <p id='category_dropdown'>
   <%= f.label :category %><br/>
