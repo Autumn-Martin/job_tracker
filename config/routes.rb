@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :companies do
     resources :contacts
   end
-  get '/companies/:id/jobs', to: 'companies#job_index', as: :dashboard
-  
+  get '/companies/:id/jobs', to: 'companies#company_jobs_index', as: :company_jobs_index
+
     # get '/jobs', to: 'jobs#index'
 
   resources :jobs

@@ -3,6 +3,11 @@ class CompaniesController < ApplicationController
     @companies = Company.all
   end
 
+  def company_jobs_index
+    @company = Company.find(params[:id])
+    @jobs = @company.jobs
+  end
+
   def new
     @company = Company.new
   end
