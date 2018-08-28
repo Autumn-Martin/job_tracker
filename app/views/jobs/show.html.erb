@@ -12,7 +12,13 @@ City: <%= @job.city %>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
 
- <%= @job.comments.each do |comment| %>
- <% comment.content %>
- <% comment.created_at %>
+<div>
+ <%= @job.comments.reverse.each do |comment| %>
+   <p class="comment">
+     <% comment.content %>
+   </p>
+   <p>
+     Posted <%= comment.created_at %>
+   </p>
  <% end %>
+</div>

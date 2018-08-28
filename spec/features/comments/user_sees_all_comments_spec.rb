@@ -11,7 +11,9 @@ describe 'User sees all comments for a job' do
       visit job_path(job)
 
       expect(page).to have_content(comment_1.content)
+      expect(page).to have_content("Posted #{comment_1.created_at}")
       expect(page).to have_content(comment_2.content)
+      expect(page).to have_content("Posted #{comment_2.created_at}")
     end
   end
 end
