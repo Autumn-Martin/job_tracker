@@ -10,8 +10,8 @@ describe 'User sees all comments for a job' do
 
       visit job_path(job)
 
-      expect(page).to have_content(comment_1)
-      expect(page).to have_content(comment_2)
+      expect(page).to have_content(comment_1.content)
+      expect(page).to have_content(comment_2.content)
     end
   end
 end
