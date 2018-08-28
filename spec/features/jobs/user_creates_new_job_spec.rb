@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "User creates a new job" do
-  scenario "a user can create a new job" do
+  xscenario "a user can create a new job" do
     company = Company.create!(name: "ESPN")
     job = company.jobs.create()
     # job = Job.new()
