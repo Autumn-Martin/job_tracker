@@ -1,0 +1,9 @@
+<%= @category.title %> Jobs
+
+<% @category.jobs.each do |job| %>
+  <li>Job Title: <%= job.title %></li>
+  <li>Company: <%= link_to job.company.name, company_path(job.company) %></li>
+  <li>Location: <%= job.city%></li>
+  <li>Level of Interest: <%= job.level_of_interest %></li>
+
+  <% end %>

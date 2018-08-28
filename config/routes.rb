@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :jobs do
     resources :comments, only: [:new, :create]
+    resources :categories
   end
 
   resources :categories
