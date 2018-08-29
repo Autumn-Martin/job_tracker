@@ -1,0 +1,53 @@
+body {
+  font-family: 'Eczar';
+}
+header {
+  background: #623CEA;
+  color: #D741A7;
+  height: 56px;
+  padding: 20px 5px;
+  margin-bottom: 5%;
+}
+header h1 {
+  margin-left: 15px;
+  float: left;
+  font-size: 25px;
+  margin-top: 15px;
+  height: 30px;
+  width: 120px;
+}
+
+header nav {
+  float: right;
+}
+
+header nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px 10px;
+}
+
+nav li:hover {
+  background: #D741A7;
+  cursor: pointer;
+}
+
+h3 {
+  color: #3A1772;
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+h4 {
+  padding: 2% 2%;
+  margin-bottom: 2%;
+  outline-style: dotted;
+}
+p {
+  padding: 2% 2%;
+
+}
+.main {
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
