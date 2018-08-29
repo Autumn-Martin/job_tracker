@@ -52,11 +52,11 @@ describe Job do
 
     it ".group_jobs_by_city" do
       company = Company.new(name: "Turing")
-      job_1 = Job.create(title: "Developer", level_of_interest: 40, city: "Vancouver", company: company)
-      job_2 = Job.create(title: "Developer", level_of_interest: 30, city: "Denver", company: company)
+      Job.create(title: "Developer", level_of_interest: 40, city: "Vancouver", company: company)
+      Job.create(title: "Developer", level_of_interest: 30, city: "Denver", company: company)
       job_3 = Job.create(title: "Developer", level_of_interest: 20, city: "L.A.", company: company)
       job_4 = Job.create(title: "Developer", level_of_interest: 20, city: "L.A.", company: company)
-      job_5 = Job.create(title: "Developer", level_of_interest: 10, city: "Kansas City", company: company)
+      Job.create(title: "Developer", level_of_interest: 10, city: "Kansas City", company: company)
       job_6 = Job.create(title: "Developer", level_of_interest: 10, city: "L.A.", company: company)
 
       expect(Job.group_jobs_by_city('L.A.')).to eq([job_3, job_4, job_6])
