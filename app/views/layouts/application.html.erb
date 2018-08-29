@@ -5,12 +5,26 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/reset.css" />
+  <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet">
 </head>
 <body>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>
   <% end %>
-<%= yield %>
+<header>
+    <h1>JobTracker</h1>
+    <nav>
+      <ul>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/companies">Companies</a></li>
+      </ul>
+    </nav>
+  </header>
+  <%= yield %>
+
 
 </body>
 </html>
