@@ -5,12 +5,11 @@ header {
   background: grey;
   height: 56px;
   padding: 20px 5px;
-
+  margin-bottom: 5%;
 }
 header h1 {
   margin-left: 15px;
   float: left;
-  background: grey;
   font-size: 25px;
   margin-top: 15px;
   height: 30px;
@@ -30,4 +29,9 @@ header nav li {
 nav li:hover {
   background: #3b6080;
   cursor: pointer;
+}
+.main {
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
 }
