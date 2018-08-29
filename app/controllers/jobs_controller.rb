@@ -4,6 +4,8 @@ class JobsController < ApplicationController
     if params[:company_id]
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs
+    elsif params[:sort]
+      @jobs = Job.sort_jobs(params[:sort])
     else
       @jobs = Job.all
     end
