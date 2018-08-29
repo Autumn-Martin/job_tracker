@@ -13,27 +13,10 @@ class JobsController < ApplicationController
     @job = Job.new()
   end
 
-
-
-
-
   def create
-    ## one idea:
-    # company = Company.find(params[:company_id])
-    # job = company.jobs.create(job_params)
-
-    ## two idea:
     @job = Job.create(job_params)
     @company = @job.company
     redirect_to company_jobs_path(@company)
-
-    ## return to this later
-    # if @job.save
-    #   flash[:success] = "You created #{@job.title} at #{@job.company.name}"
-    #   redirect_to jobs_path
-    # else
-    #   render :new
-    # end
   end
 
   def show
