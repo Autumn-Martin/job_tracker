@@ -1,0 +1,33 @@
+body {
+  font-family: 'Eczar';
+}
+header {
+  background: grey;
+  height: 56px;
+  padding: 20px 5px;
+
+}
+header h1 {
+  margin-left: 15px;
+  float: left;
+  background: grey;
+  font-size: 25px;
+  margin-top: 15px;
+  height: 30px;
+  width: 120px;
+}
+
+header nav {
+  float: right;
+}
+
+header nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px 10px;
+}
+
+nav li:hover {
+  background: #3b6080;
+  cursor: pointer;
+}
