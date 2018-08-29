@@ -6,10 +6,6 @@ Rails.application.routes.draw do
     resources :jobs
     resources :contacts, only: [:create, :edit, :delete]
   end
-  # get '/companies/:id/jobs', to: 'companies#company_jobs_index', as: :company_jobs_index
-
-    # get '/jobs', to: 'jobs#index'
-
 
   resources :jobs do
     resources :comments, only: [:new, :create]

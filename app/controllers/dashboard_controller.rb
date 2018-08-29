@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
   def index
-    @level_of_interest = Job.interest_level
+    @jobs = Job.group_by_interest
+    @cityjobs = Job.group_by_city
   end
 end
