@@ -1,10 +1,11 @@
 <%= @category.title %> Jobs
+<%= link_to "Add New Job", new_job_path, class: 'new-job' %>
 
 <% @category.jobs.each do |job| %>
   <li>Job Title: <%= job.title %></li>
   <li>Company: <%= link_to job.company.name, company_path(job.company) %></li>
   <li>Location: <%= job.city%></li>
   <li>Level of Interest: <%= job.level_of_interest %></li>
-
-
+  <%= link_to "Edit", edit_job_path(job) %>
+  <%= link_to "Delete", job_path(job), method: "delete" %>
   <% end %>

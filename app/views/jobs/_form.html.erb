@@ -6,7 +6,7 @@
 </ul>
 <p id='company_dropdown'>
   <%= f.label :company %><br/>
-  <%= f.collection_select :company, Company.all, :id, :name%>
+  <%= f.select :company_id, Company.all.collect { |company| [company.name, company.id] } %>
 </p>
 <p id='category_dropdown'>
   <%= f.label :category %><br/>
@@ -15,10 +15,6 @@
 <p>
   <%= f.label :title %><br/>
   <%= f.text_field :title %>
-</p>
-<p>
-  <%= f.label :company %><br/>
-  <%= f.text_field :company %>
 </p>
 <p>
   <%= f.label :city %><br/>

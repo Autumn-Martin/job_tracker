@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     # get '/jobs', to: 'jobs#index'
 
 
-  resources :jobs, only: [:index] do
+  resources :jobs do
     resources :comments, only: [:new, :create]
     resources :categories
   end

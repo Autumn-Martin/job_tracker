@@ -2,41 +2,4 @@
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
 
-<%= form_for [@company, @job] do |f| %>
-<ul>
-<% @job.errors.full_messages.each do |error| %>
-  <li><%= error %></li>
-  <% end %>
-</ul>
-<p id='company_dropdown'>
-  <%= f.label :company %><br/>
-  <%= f.collection_select :company, Company.all, :id, :name%>
-</p>
-<p id='category_dropdown'>
-  <%= f.label :category %><br/>
-  <%= f.collection_select :category, Category.all, :id, :title%>
-</p>
-<p>
-  <%= f.label :title %><br/>
-  <%= f.text_field :title %>
-</p>
-<p>
-  <%= f.label :company %><br/>
-  <%= f.text_field :company %>
-</p>
-<p>
-  <%= f.label :city %><br/>
-  <%= f.text_field :city %>
-</p>
-<p>
-  <%= f.label :description %><br/>
-  <%= f.text_area :description %>
-</p>
-<p id='interest-dropdown'>
-  <%= f.label :level_of_interest %><br/>
-  <%= f.select :level_of_interest, [1, 2, 3, 4, 5] %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
+<%= render partial: "form" %>
