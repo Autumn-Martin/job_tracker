@@ -13,7 +13,6 @@ describe "User edits an existing job" do
 
     expect(current_path).to eq(edit_job_path(job))
 
-    # select "Video Game Dev", from: 'job[category]'
     fill_in "job[title]", with: "Chef"
     select 2, from: 'job[level_of_interest]'
     fill_in "job[city]", with: "Austin"
@@ -23,9 +22,7 @@ describe "User edits an existing job" do
     expect(page).to have_content("Chef")
     expect(page).to have_content("Austin")
     expect(page).to have_content(2)
-    # expect(page).to have_content(new_category.title)
 
-    # expect(page).to_not have_content(old_category.title)
     expect(page).to_not have_content("Software Dev")
     expect(page).to_not have_content(30)
     expect(page).to_not have_content("Denver")

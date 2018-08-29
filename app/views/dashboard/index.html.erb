@@ -1,0 +1,21 @@
+<h1> Job Tracker</h1>
+
+<div>
+<h2> Jobs by Interest </h2>
+
+<% @jobs.each do |k, v| %>
+Interest Level: <%= k %>
+Number of Jobs: <%= v %>
+<% end %>
+</div>
+
+<h2> Top Companies </h2>
+
+<div>To be determined</div>
+
+<div>
+  <% @cityjobs.each do |k, v| %>
+  <%= k %>
+  <%= v %> jobs
+  <% end %>
+</div>
