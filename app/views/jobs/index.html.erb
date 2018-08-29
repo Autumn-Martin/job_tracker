@@ -1,5 +1,5 @@
 <h3>All Jobs</h3>
-<%= link_to "Add New Job", new_company_job_path(@company), class: 'new-job' %>
+<%= link_to "Add New Job", new_job_path, class: 'new-job' %>
 <ul>
   <% @jobs.each do |job| %>
     <%= job.title %>
@@ -7,7 +7,7 @@
     <%= job.city %>
     <%= job.level_of_interest %>
     <%= job.category&.title %>
-    <%= link_to "Edit", edit_company_job_path(@company, job) %>
-    <%= link_to "Delete", company_job_path(@company, job), method: "delete" %>
+    <%= link_to "Edit", edit_job_path(job) %>
+    <%= link_to "Delete", job_path(job), method: "delete" %>
   <% end %>
 </ul>

@@ -6,12 +6,10 @@ class JobsController < ApplicationController
       @jobs = @company.jobs
     else
       @jobs = Job.all
-      render 'home'
     end
   end
 
   def new
-    @company = Company.find(params[:company_id])
     @job = Job.new()
   end
 
@@ -25,9 +23,8 @@ class JobsController < ApplicationController
     # job = company.jobs.create(job_params)
 
     ## two idea:
-    @company = Company.find(params[:company_id])
-    @job = Job.new(job_params)
-    @company.jobs << @job
+    @job = Job.create(job_params)
+    @company = @job.company
     redirect_to company_jobs_path(@company)
 
     ## return to this later
@@ -75,6 +72,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
+    params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id, :company_id)
   end
 end
