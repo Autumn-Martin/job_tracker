@@ -12,6 +12,16 @@ City: <%= @job.city %>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
 
+<%= form_for [@job, @comment] do |f| %>
+  <p>
+    <%= f.label :content %>
+    <%= f.text_area :content  %>
+  </p>
+  <p>
+    <%= f.submit 'Save'%>
+  </p>
+<% end %>
+
 <div>
  <%= @job.comments.reverse.each do |comment| %>
    <p class="comment">
