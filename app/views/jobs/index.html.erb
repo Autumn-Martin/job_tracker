@@ -1,13 +1,19 @@
 <h3>All Jobs</h3>
+<h4>
 <%= link_to "Add New Job", new_job_path, class: 'new-job' %>
-<ul>
   <% @jobs.each do |job| %>
-    <%= link_to job.title, job_path(job) %>
-    <%= link_to job.company.name, company_path(job.company) %>
-    <%= job.city %>
-    <%= job.level_of_interest %>
-    <%= job.category&.title %>
-    <%= link_to "Edit", edit_job_path(job) %>
-    <%= link_to "Delete", job_path(job), method: "delete" %>
+</h4>
+  <div class="job-container">
+    <div class="row">
+      <p>
+        <%= link_to job.title, job_path(job) %>
+        <%= link_to job.company.name, company_path(job.company) %>
+        <%= job.city %>
+        <%= job.level_of_interest %>
+        <%= job.category&.title %>
+        <%= link_to "Edit", edit_job_path(job) %>
+        <%= link_to "Delete", job_path(job), method: "delete" %>
+      </p>
+    </div>
+  </div>
   <% end %>
-</ul>

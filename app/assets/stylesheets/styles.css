@@ -2,7 +2,8 @@ body {
   font-family: 'Eczar';
 }
 header {
-  background: grey;
+  background: #623CEA;
+  color: #D741A7;
   height: 56px;
   padding: 20px 5px;
   margin-bottom: 5%;
@@ -27,8 +28,23 @@ header nav li {
 }
 
 nav li:hover {
-  background: #3b6080;
+  background: #D741A7;
   cursor: pointer;
+}
+
+h3 {
+  color: #3A1772;
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+h4 {
+  padding: 2% 2%;
+  margin-bottom: 2%;
+  outline-style: dotted;
+}
+p {
+  padding: 2% 2%;
+
 }
 .main {
   text-align: center;
