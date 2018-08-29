@@ -4,9 +4,16 @@ class Job < ApplicationRecord
   belongs_to :category, optional: true
   has_many :comments
 
-  def self.interest_level
-    group(:level_of_interest)
-    order(:level_of_interest, :asc)
-    count
+  def self.sort_jobs(sort_by)
+    if sort_by == 'interest'
+      order('level_of_interest DESC')
+    elsif sort_by == 'city'
+      order('city ASC')
+    end
   end
+
+  def self.group_jobs_by_city(city)
+    where(city: city)
+  end
+
 end
