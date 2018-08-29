@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root to: 'jobs#index'
 
-  resources :companies, shallow: true do
-    resources :jobs, only: [:index]
+  resources :companies do
+    resources :jobs
     resources :contacts, only: [:create, :edit, :delete]
   end
   # get '/companies/:id/jobs', to: 'companies#company_jobs_index', as: :company_jobs_index
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     # get '/jobs', to: 'jobs#index'
 
 
-  resources :jobs do
+  resources :jobs, only: [:index] do
     resources :comments, only: [:new, :create]
     resources :categories
   end
