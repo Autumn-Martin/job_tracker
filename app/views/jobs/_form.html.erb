@@ -1,4 +1,4 @@
-<%= form_for [@job] do |f| %>
+<%= form_for [@company, @job] do |f| %>
 <ul>
 <% @job.errors.full_messages.each do |error| %>
   <li><%= error %></li>
@@ -10,7 +10,7 @@
 </p>
 <p id='category_dropdown'>
   <%= f.label :category %><br/>
-  <%= f.collection_select :category, Category.all, :id, :title%>
+  <%= f.select :category_id, Category.all.collect { |cat| [ cat.title, cat.id ] } %>
 </p>
 <p>
   <%= f.label :title %><br/>

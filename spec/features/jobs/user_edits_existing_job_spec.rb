@@ -7,11 +7,11 @@ describe "User edits an existing job" do
     new_category = Category.create!(title: "Video Game Dev")
     job = company.jobs.create!(title: 'Software Dev', level_of_interest: 3, city: "Denver", category_id: old_category.id)
 
-    visit jobs_path(job)
+    visit company_jobs_path(company)
 
     click_link "Edit"
 
-    expect(current_path).to eq(edit_job_path(job))
+    expect(current_path).to eq(edit_company_job_path(company, job))
 
     # select "Video Game Dev", from: 'job[category]'
     fill_in "job[title]", with: "Chef"
