@@ -14,7 +14,7 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 
 <%= form_for [@job, @comment] do |f| %>
   <p>
-    <%= f.label :content %>
+    <%= f.label :notes %>
     <%= f.text_area :content  %>
   </p>
   <p>
@@ -23,12 +23,12 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <% end %>
 
 <div>
- <%= @job.comments.reverse.each do |comment| %>
+ <% @job.comments.reverse.each do |comment| %>
    <p class="comment">
-     <% comment.content %>
+     <%= comment.content %>
    </p>
    <p>
-     Posted <%= comment.created_at %>
+     Posted <%= time_ago_in_words(comment.created_at) %> ago
    </p>
  <% end %>
 </div>

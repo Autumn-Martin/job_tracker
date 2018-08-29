@@ -2,8 +2,8 @@
 <%= link_to "Add New Job", new_job_path, class: 'new-job' %>
 <ul>
   <% @jobs.each do |job| %>
-    <%= job.title %>
-    <%= job.company.name %>
+    <%= link_to job.title, job_path(job) %>
+    <%= link_to job.company.name, company_path(job.company) %>
     <%= job.city %>
     <%= job.level_of_interest %>
     <%= job.category&.title %>
