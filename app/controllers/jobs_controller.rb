@@ -46,8 +46,8 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @company = Company.find(params[:company_id])
     @job = Job.find(params[:id])
+    @company = @job.company
   end
 
   def update
@@ -64,8 +64,8 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    company = Company.find(params[:company_id])
     job = Job.find(params[:id])
+    company = job.company
     job.destroy
 
     flash[:success] = "Job was successfully deleted!"
