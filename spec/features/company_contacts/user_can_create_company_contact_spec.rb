@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'User sees all comments for a job' do
   describe 'when user visits job/show page' do
-    it 'shows all comments for a job' do
+    xit 'shows all comments for a job' do
       company = Company.create(name: 'NLC')
 
       visit company_path(company)
