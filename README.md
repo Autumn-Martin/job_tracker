@@ -1,5 +1,7 @@
 # Job Tracker
 
+This is a clone of the original repo, which can be found here: https://github.com/NickLindeberg/job-tracker
+
 ## Learning Goals
 
 * Use migrations to create tables with different data types including indexed foreign keys
